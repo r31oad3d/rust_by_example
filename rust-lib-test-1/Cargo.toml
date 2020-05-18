@@ -1,0 +1,12 @@
+[package]
+name = "rust-lib-test-1"
+version = "0.1.0"
+authors = ["r31oad3d <r31oad3d@163.com>"]
+edition = "2018"
+links = "testlib2"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+

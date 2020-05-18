@@ -1,0 +1,22 @@
+[workspace]
+members = [
+    "old",
+    "hello_world",
+    "enums_example",
+    "from_to_example",
+    "curry_function",
+    "reflect_study",
+    "hello_macro",
+    "hello_macro_derive",
+    "actix-study",
+    "rust_data_structure",
+    "rust_lib_study",
+    "rust-lib-test-1",
+    "rust-lib-test-2",
+    "add-one",
+    "adder",
+    "rust-async",
+    "gussing_game",
+    "rust_study",
+    "minigrep"
+]
