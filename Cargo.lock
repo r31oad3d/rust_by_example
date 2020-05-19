@@ -909,6 +909,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "hw"
+version = "0.1.0"
+dependencies = [
+ "pm 0.1.0",
+]
+
+[[package]]
 name = "hyper"
 version = "0.12.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1296,6 +1303,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "pin-utils"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "pm"
+version = "0.1.0"
 
 [[package]]
 name = "ppv-lite86"
