@@ -20,5 +20,6 @@ members = [
     "rust_study",
     "minigrep",
     "hw",
-    "hw/pm"
+    "hw/pm",
+    "error_handle"
 ]

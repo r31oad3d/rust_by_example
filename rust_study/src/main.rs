@@ -50,14 +50,17 @@ pub fn notify_4(_item: impl Display + Summary) {}
 
 pub fn notify_5<T: Display + Summary>(_item: T) {}
 
-pub fn some_function<T: Display + Clone, U: Clone + Debug>(_t: T, _u: U) -> i32 {
+pub fn some_function<T: Display + Clone, U: Clone + Debug>(
+    _t: T,
+    _u: U,
+) -> i32 {
     1
 }
 
 pub fn some_function_2<T, U>(_t: T, _u: U) -> i32
-    where
-        T: Display + Clone,
-        U: Clone + Debug,
+where
+    T: Display + Clone,
+    U: Clone + Debug,
 {
     2
 }
@@ -69,7 +72,9 @@ fn print_sum(v: &Vec<i32>) {
 fn main() {
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
-        content: String::from("of course, as you probably already know, people"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
         reply: false,
         retweet: false,
     };

@@ -5,7 +5,6 @@ pub fn hw(_: TokenStream) -> TokenStream {
     r#"println!("Hello World!");"#.parse().unwrap()
 }
 
-
 #[cfg(test)]
 mod tests {
     #[test]
