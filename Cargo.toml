@@ -21,5 +21,11 @@ members = [
     "minigrep",
     "hw",
     "hw/pm",
-    "error_handle"
+    "error_handle",
+    "gtk-example",
+    "qt-example",
+    "orbtk-example",
+    "smart_pointer_example",
+    "shaku-example",
+    "lifecycle_example"
 ]
