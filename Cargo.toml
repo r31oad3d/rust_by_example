@@ -27,5 +27,6 @@ members = [
     "orbtk-example",
     "smart_pointer_example",
     "shaku-example",
-    "lifecycle_example"
+    "lifecycle_example",
+    "io-example"
 ]
