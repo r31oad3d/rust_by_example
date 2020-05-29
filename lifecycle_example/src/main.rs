@@ -16,7 +16,7 @@ struct Foo<'a, 'b> {
     y: &'b i32,
 }
 
-struct Context<'a> (&'a str);
+struct Context<'a>(&'a str);
 
 struct Parser<'b> {
     context: &'b Context<'b>,
@@ -29,9 +29,8 @@ impl<'c> Parser<'c> {
 }
 
 fn parse_context<'d>(context: &'d Context<'d>) -> Result<(), &'d str> {
-    Parser{context}.parse()
+    Parser { context }.parse()
 }
-
 
 fn main() {
     let s1 = String::from("111");
@@ -50,7 +49,7 @@ fn main() {
     let m;
     {
         let y = 6;
-        let f = Foo{x:&x, y:&y};
+        let f = Foo { x: &x, y: &y };
         m = f.x;
     }
     println!("{}", m);

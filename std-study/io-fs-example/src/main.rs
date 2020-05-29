@@ -1,17 +1,18 @@
 #![allow(unused_imports)]
 use std::fs::File;
-use std::io::{self,Read, Seek, SeekFrom, BufReader, BufRead, BufWriter, Write};
 use std::io::Result as IOResult;
+use std::io::{
+    self, BufRead, BufReader, BufWriter, Read, Seek, SeekFrom, Write,
+};
 
 fn main() -> IOResult<()> {
     let mut f = File::open("./io-example/file1")?;
-    let mut buffer = [0;20];
+    let mut buffer = [0; 20];
     let n1 = f.read(&mut buffer)?;
     println!("n: {:?}", n1);
     println!("the bytes: {:?}", &buffer[..n1]);
 
-
-    buffer = [0;20];
+    buffer = [0; 20];
     f.seek(SeekFrom::Start(10))?;
     let n2 = f.read(&mut buffer)?;
     println!("n: {:?}", n2);

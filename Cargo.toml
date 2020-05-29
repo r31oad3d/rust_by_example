@@ -28,5 +28,9 @@ members = [
     "smart_pointer_example",
     "shaku-example",
     "lifecycle_example",
-    "io-example"
+    "std-study/io-fs-example",
+    "std-study/async-study",
+    "std-study/test-example",
+    "tokio-example",
+
 ]

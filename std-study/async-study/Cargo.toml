@@ -1,0 +1,41 @@
+[package]
+name = "async-study"
+version = "0.1.0"
+authors = ["r31oad3d <r31oad3d@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+futures = "0.3.5"
+hyper = "0.13.5"
+tokio = { version = "0.2.21", features = ["full"] }
+anyhow = "1.0.31"
+reqwest = { version = "0.10.4", feature = ["blocking"] }
+
+[dev-dependencies]
+futures = "0.3"
+
+[[bin]]
+name = "bin1"
+path = "src/bin/bin1.rs"
+
+[[bin]]
+name = "bin2"
+path = "src/bin/bin2.rs"
+
+[[bin]]
+name = "bin3"
+path = "src/bin/bin3.rs"
+
+[[bin]]
+name = "bin4"
+path = "src/bin/bin4.rs"
+
+[[bin]]
+name = "bin5"
+path = "src/bin/bin5.rs"
+
+[[bin]]
+name = "bin6"
+path = "src/bin/bin6.rs"

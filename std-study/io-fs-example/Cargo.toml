@@ -1,0 +1,29 @@
+[package]
+name = "io-fs-example"
+version = "0.1.0"
+authors = ["r31oad3d <r31oad3d@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "bin1"
+path = "src/bin1.rs"
+
+[[bin]]
+name = "bin2"
+path = "src/bin2.rs"
+
+[[bin]]
+name = "bin3"
+path = "src/bin3.rs"
+
+[[bin]]
+name = "bin4"
+path = "src/bin4.rs"
+
+[[bin]]
+name = "bin5"
+path = "src/bin5.rs"
