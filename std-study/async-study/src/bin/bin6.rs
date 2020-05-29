@@ -2,6 +2,7 @@ use {
     futures::{
         future::{BoxFuture, FutureExt},
         task::{waker_ref, ArcWake},
+        executor::block_on,
     },
     std::{
         future::Future,
@@ -13,6 +14,7 @@ use {
         time::Duration,
     },
 };
+
 struct SharedState {
     completed: bool,
     waker: Option<Waker>,
@@ -118,12 +120,39 @@ fn main() {
     let (executor, spawner) = new_executor_and_spawner();
     spawner.spawn(async {
         println!("howdy!");
-        TimerFuture::new(Duration::new(20, 0)).await;
+        TimerFuture::new(Duration::new(2, 0)).await;
         println!("done!")
     });
 
     drop(spawner);
 
     executor.run();
+
+    async fn blocks() {
+        let my_string = "foo".to_string();
+
+        let future_one = async {
+            println!("{}", my_string)
+        };
+
+        let future_two = async {
+            println!("{}", my_string)
+        };
+
+        let((),()) = futures::join!(future_one, future_two);
+
+    }
+
+    fn move_blocks() -> impl Future<Output=()> {
+        let my_string = "foo".to_string();
+        async move {
+            println!("{}", my_string)
+        }
+    }
+
+    block_on(blocks());
+
+    let f1 = move_blocks();
+    block_on(f1);
 
 }
