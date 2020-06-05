@@ -7,7 +7,7 @@ use {
     std::{
         future::Future,
         pin::Pin,
-        sync::mpsc::{sync_channel, Receiver, SyncSender},
+        sync::mpsc::{self, sync_channel, Receiver, SyncSender, channel},
         sync::{Arc, Mutex},
         task::{Context, Poll, Waker},
         thread,
@@ -154,5 +154,6 @@ fn main() {
 
     let f1 = move_blocks();
     block_on(f1);
+
 
 }
