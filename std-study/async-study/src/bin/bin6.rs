@@ -1,13 +1,13 @@
 use {
     futures::{
+        executor::block_on,
         future::{BoxFuture, FutureExt},
         task::{waker_ref, ArcWake},
-        executor::block_on,
     },
     std::{
         future::Future,
         pin::Pin,
-        sync::mpsc::{self, sync_channel, Receiver, SyncSender, channel},
+        sync::mpsc::{self, channel, sync_channel, Receiver, SyncSender},
         sync::{Arc, Mutex},
         task::{Context, Poll, Waker},
         thread,
@@ -131,29 +131,20 @@ fn main() {
     async fn blocks() {
         let my_string = "foo".to_string();
 
-        let future_one = async {
-            println!("{}", my_string)
-        };
+        let future_one = async { println!("{}", my_string) };
 
-        let future_two = async {
-            println!("{}", my_string)
-        };
+        let future_two = async { println!("{}", my_string) };
 
-        let((),()) = futures::join!(future_one, future_two);
-
+        let ((), ()) = futures::join!(future_one, future_two);
     }
 
-    fn move_blocks() -> impl Future<Output=()> {
+    fn move_blocks() -> impl Future<Output = ()> {
         let my_string = "foo".to_string();
-        async move {
-            println!("{}", my_string)
-        }
+        async move { println!("{}", my_string) }
     }
 
     block_on(blocks());
 
     let f1 = move_blocks();
     block_on(f1);
-
-
 }

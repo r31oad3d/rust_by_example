@@ -32,5 +32,5 @@ members = [
     "std-study/async-study",
     "std-study/test-example",
     "tokio-example",
-
+    "iter"
 ]
