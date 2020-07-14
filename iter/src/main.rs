@@ -102,11 +102,13 @@ fn main() {
     let mut vv3 = RefCell::new(vec![11, 12, 13, 14, 15, 16, 17]);
     let mut vvv1 = RefCell::new(vec![vv1, vv2, vv3]);
 
-
-    fn push_value(v: &RefCell<Vec<RefCell<Vec<i32>>>>, value: i32, postion: usize) -> () {
+    fn push_value(
+        v: &RefCell<Vec<RefCell<Vec<i32>>>>,
+        value: i32,
+        postion: usize,
+    ) -> () {
         let b1 = v.borrow_mut();
-        let mut postion_v =
-            RefMut::map(b1, |t| t.get_mut(postion).unwrap());
+        let mut postion_v = RefMut::map(b1, |t| t.get_mut(postion).unwrap());
         (*postion_v).borrow_mut().push(value);
     }
     push_value(&vvv1, 1000, 2);
@@ -114,4 +116,33 @@ fn main() {
     // std::mem::drop(postion_0);
 
     println!("vvv3={:?}", &vvv1);
+    std::mem::drop(vvv1);
+    let mut vv1 = RefCell::new(vec![1, 2, 3, 4, 5]);
+    let mut vv2 = RefCell::new(vec![6, 7, 8, 9, 0]);
+    let mut vv3 = RefCell::new(vec![11, 12, 13, 14, 15, 16, 17]);
+    let mut vvv1 = vec![vv1, vv2, vv3];
+
+    #[must_use]
+    fn push_value_direct(
+        v: &mut Vec<RefCell<Vec<i32>>>,
+        value: i32,
+        postion: usize,
+    ) -> Result<(),String> {
+        match v.get_mut(postion) {
+            Some(vi) => {
+                vi.borrow_mut().push(value);
+                Ok(())
+            },
+            None => Err("Error".to_string())
+        }
+    }
+    let ret = push_value_direct(&mut vvv1, 1000, 4);
+    println!("vvv4 ret={:?}", ret);
+    println!("vvv4={:?}", &vvv1);
+    let ret = push_value_direct(&mut vvv1, 10000, 1);
+    println!("vvv4 ret={:?}", ret);
+    println!("vvv4={:?}", &vvv1);
+    push_value_direct(&mut vvv1, 1, 5)
+        .map_err(|err| println!("vvv5 ret={:?}", err))
+        .map(|_| println!("vvv5={:?}", &vvv1));
 }
