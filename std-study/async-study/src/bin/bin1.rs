@@ -5,7 +5,7 @@ fn main() {
     let mut children = vec![];
 
     for i in 0..NTHREADS {
-        children.push(thread::spawn(move || {
+        children.push(thread::spawn( move || {
             println!("this is thread number {}", i);
         }));
     }

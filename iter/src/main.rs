@@ -145,4 +145,6 @@ fn main() {
     push_value_direct(&mut vvv1, 1, 5)
         .map_err(|err| println!("vvv5 ret={:?}", err))
         .map(|_| println!("vvv5={:?}", &vvv1));
+
+
 }

@@ -31,6 +31,8 @@ members = [
     "std-study/io-fs-example",
     "std-study/async-study",
     "std-study/test-example",
+    "std-study/misc",
     "tokio-example",
-    "iter"
+    "iter",
+    "variables"
 ]
