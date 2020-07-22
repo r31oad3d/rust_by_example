@@ -1,7 +1,11 @@
-#![feature(core_intrinsics)]
+// #![feature(core_intrinsics)]
+
+use std::ops::{Sub, SubAssign};
+use std::process::Output;
+
 struct Foo<T>(T);
 
-struct Bar<T:?Sized> (T);
+struct Bar<T: ?Sized>(T);
 
 //struct FooUse(Foo<[i32]>);
 
@@ -26,25 +30,39 @@ fn log(fav: Favor) {
         Favor::Nor(data) => {
             config(&data);
             print_type_name_of(data);
-        },
+        }
         Favor::NorRef(ref data) => {
             config(data);
             print_type_name_of(data);
-        },
+        }
         Favor::Ref(data) => {
             config(data);
             print_type_name_of(data);
-        },
+        }
         Favor::RefRef(ref data) => {
             config(data);
             print_type_name_of(data);
-        },
+        }
+    }
+}
+#[derive(Debug)]
+struct S11<T: Sub<Output = T>> {
+    value: T,
+}
+
+impl<T: Sub<Output = T>> Sub for S11<T> {
+    type Output = Self;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        S11 {
+            value: self.value - rhs.value,
+        }
     }
 }
 
 fn main() {
     let ref a = 1;
-    let b = B{a};
+    let b = B { a };
     let r = &1;
     let &a = r;
     let a = *r;
@@ -68,13 +86,46 @@ fn main() {
     println!("{:?}", b as *const i32);
     println!("{:p}", b);
 
-    let a:u32 = 0x10111213;
-    let b:[u8;4];
-    b  = unsafe{std::mem::transmute(a)};
+    let a: u32 = 0x10111213;
+    let b: [u8; 4];
+    b = unsafe { std::mem::transmute(a) };
 
     println!("{:x}-{:x}-{:x}-{:x}", b[0], b[1], b[2], b[3]);
+
+    println!("minus returns : {:?}", minus(2, 1));
+    println!(
+        "minus returns : {:?}",
+        minus(S11 { value: 2 }, S11 { value: 1 })
+    );
+    println!(
+        "minus returns : {:?}",
+        minus(S11 { value: 4.8 }, S11 { value: 1.9 })
+    );
+    println!(
+        "minus returns : {:?}",
+        minus(S11 { value: 1000_usize }, S11 { value: 9_usize })
+    );
+    let s111 = S11 { value: 123 };
+    let s112 = S11 { value: 321 };
+    println!(
+        "minus returns : {:?}",
+        minus(S11 { value: s111 }, S11 { value: s112 })
+    );
+    let s111 = S11 { value: 123 };
+    let s112 = S11 { value: 321 };
+    println!(
+        "minus returns : {:?}",
+        S11 { value: s111 } - S11 { value: s112 }
+    );
 }
 fn print_type_name_of<T>(_: T) {
-    println!("{}", unsafe { std::intrinsics::type_name::<T>() });
+    // println!("{}", unsafe { std::intrinsics::type_name::<T>() });
     println!("{}", std::any::type_name::<T>())
+}
+
+fn minus<T>(v1: T, v2: T) -> T
+where
+    T: Sub<Output = T>,
+{
+    v1 - v2
 }

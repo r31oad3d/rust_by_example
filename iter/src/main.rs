@@ -64,8 +64,8 @@ fn main() {
     println!("vvvv={:?}", vvvv);
     std::mem::drop(vvvv);
     // let mut vvv2 = vec![vv1, vv2, vv3];
-    // vvv2.iter().for_each(|mut v| {
-    //     v.push(200);
+    // vvv2.iter().for_each(|mut V| {
+    //     V.push(200);
     // });
     // println!("vvv2={:?}", vvv2);
     // let mut vv1 = Rc::new(vec![1, 2, 3, 4, 5]);
@@ -73,9 +73,9 @@ fn main() {
     // let mut vv3 = Rc::new(vec![11, 12, 13, 14, 15, 16, 17]);
     // let mut vvv1 = vec![vv1, vv2, vv3];
     //
-    // vvv1.iter().for_each(|v| {
+    // vvv1.iter().for_each(|V| {
     //
-    //     v.borrow_mut().push(100);
+    //     V.borrow_mut().push(100);
     // });
     // println!("!!vvv1={:?}", vvv1);
     // std::mem::drop(vvv1);
@@ -127,13 +127,13 @@ fn main() {
         v: &mut Vec<RefCell<Vec<i32>>>,
         value: i32,
         postion: usize,
-    ) -> Result<(),String> {
+    ) -> Result<(), String> {
         match v.get_mut(postion) {
             Some(vi) => {
                 vi.borrow_mut().push(value);
                 Ok(())
-            },
-            None => Err("Error".to_string())
+            }
+            None => Err("Error".to_string()),
         }
     }
     let ret = push_value_direct(&mut vvv1, 1000, 4);
@@ -145,6 +145,4 @@ fn main() {
     push_value_direct(&mut vvv1, 1, 5)
         .map_err(|err| println!("vvv5 ret={:?}", err))
         .map(|_| println!("vvv5={:?}", &vvv1));
-
-
 }

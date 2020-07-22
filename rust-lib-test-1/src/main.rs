@@ -14,17 +14,12 @@ fn main() {
         #[link_name = "do_callback"]
         fn do_callback(f: Box<dyn Fn(i32) -> i32>) -> i32;
 
-
     }
 
     unsafe { println!("{}", add1111(1, 2)) }
     unsafe { println!("{}", minus1111(3, 4)) }
 
-
     unsafe {
-
-        println!("{:?}", do_callback(Box::new(|a| {
-            a * a
-        })));
+        println!("{:?}", do_callback(Box::new(|a| { a * a })));
     }
 }
