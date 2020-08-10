@@ -35,5 +35,8 @@ members = [
     "std-study/misc",
     "tokio-example",
     "iter",
-    "variables"
+    "variables",
+    "crate_misc",
+    "yew_study",
+    "macro_study"
 ]

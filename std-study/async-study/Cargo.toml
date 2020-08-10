@@ -8,12 +8,12 @@ edition = "2018"
 
 [dependencies]
 futures = "0.3.5"
-hyper = "0.13.5"
-tokio = { version = "0.2", features = ["full"] }
-anyhow = "1.0.31"
+hyper = "0.13.7"
+tokio = { version = "0.2.22", features = ["full"] }
+anyhow = "1.0.32"
 
 [dev-dependencies]
-futures = "0.3"
+futures = "0.3.5"
 
 [[bin]]
 name = "bin1"

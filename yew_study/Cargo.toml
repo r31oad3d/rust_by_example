@@ -1,5 +1,5 @@
 [package]
-name = "misc"
+name = "yew_study"
 version = "0.1.0"
 authors = ["r31oad3d <r31oad3d@163.com>"]
 edition = "2018"
@@ -7,6 +7,3 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-itertools = "0.9.0"
-base64 = "0.12.3"
-image = "0.23.7"

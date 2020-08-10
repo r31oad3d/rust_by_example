@@ -1,4 +1,7 @@
-use itertools::{Itertools, Merge, MergeBy};
+extern crate itertools;
+extern crate base64;
+extern crate image;
+
 
 fn main() {
     println!("{:?}", (1..=10).filter(|x| x % 2 == 0).size_hint());
@@ -31,4 +34,12 @@ fn main() {
     //let ret2 = (&merge1 as &mut dyn Iterator<Item=&i32>).count();
     let ret2 = merge1.product::<i32>();
     println!("ret2:{:?}", ret2);
+
+    println!("ret2");
+
+    let a1 = b"hello world";
+    let b1 = base64::encode("1");
+    println!("{:?}", b1);
+
+
 }
