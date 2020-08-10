@@ -1,7 +1,6 @@
-extern crate itertools;
 extern crate base64;
 extern crate image;
-
+extern crate itertools;
 
 fn main() {
     println!("{:?}", (1..=10).filter(|x| x % 2 == 0).size_hint());
@@ -40,6 +39,4 @@ fn main() {
     let a1 = b"hello world";
     let b1 = base64::encode("1");
     println!("{:?}", b1);
-
-
 }

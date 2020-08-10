@@ -68,9 +68,9 @@ fn main() {
         ]
     ]);
     println!("{:?}", out);
- //    assert_eq!(
- //        out,
- //        "<html><head><title>Macros guide</title></head>\
- // <body><h1>Macros are the best!</h1></body></html>"
- //    );
+    //    assert_eq!(
+    //        out,
+    //        "<html><head><title>Macros guide</title></head>\
+    // <body><h1>Macros are the best!</h1></body></html>"
+    //    );
 }
