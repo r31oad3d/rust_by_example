@@ -1,3 +1,4 @@
+mod trait_object;
 use std::fmt::{Debug, Display};
 
 pub trait Summary {
