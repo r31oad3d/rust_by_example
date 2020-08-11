@@ -1,0 +1,91 @@
+[package]
+name = "crate_actix_study"
+version = "0.1.0"
+authors = ["r31oad3d <r31oad3d@163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix = {git = "https://github.com/actix/actix"}
+actix-web = "2.0.0"
+actix-rt = "1.1.1"
+actix-http = "1.0.1"
+bytes = "0.5.6"
+serde = "1.0.114"
+futures = "0.3.5"
+rand = "0.7.3"
+failure = "0.1.8"
+
+
+[[bin]]
+name = "bin1"
+path = "src/bin/bin1.rs"
+
+[[bin]]
+name = "bin2"
+path = "src/bin/bin2.rs"
+
+[[bin]]
+name = "bin3"
+path = "src/bin/bin3.rs"
+
+[[bin]]
+name = "bin4"
+path = "src/bin/bin4.rs"
+
+[[bin]]
+name = "bin5"
+path = "src/bin/bin5.rs"
+
+[[bin]]
+name = "bin6"
+path = "src/bin/bin6.rs"
+
+[[bin]]
+name = "bin7"
+path = "src/bin/bin7.rs"
+
+[[bin]]
+name = "bin8"
+path = "src/bin/bin8.rs"
+
+[[bin]]
+name = "bin9"
+path = "src/bin/bin9.rs"
+
+[[bin]]
+name = "bin10"
+path = "src/bin/bin10.rs"
+
+[[bin]]
+name = "bin11"
+path = "src/bin/bin11.rs"
+
+[[bin]]
+name = "bin12"
+path = "src/bin/bin12.rs"
+
+[[bin]]
+name = "bin13"
+path = "src/bin/bin13.rs"
+
+[[bin]]
+name = "bin14"
+path = "src/bin/bin14.rs"
+
+[[bin]]
+name = "bin15"
+path = "src/bin/bin15.rs"
+
+[[bin]]
+name = "bin16"
+path = "src/bin/bin16.rs"
+
+[[bin]]
+name = "bin17"
+path = "src/bin/bin17.rs"
+
+[[bin]]
+name = "bin18"
+path = "src/bin/bin18.rs"
