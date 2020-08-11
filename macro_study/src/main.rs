@@ -1,4 +1,4 @@
-#![recursion_limit = "256"]
+#![recursion_limit = "20"]
 
 #[macro_use]
 mod macros;
@@ -73,4 +73,13 @@ fn main() {
     //        "<html><head><title>Macros guide</title></head>\
     // <body><h1>Macros are the best!</h1></body></html>"
     //    );
+
+    //let mut sum = 0;
+    let ret6 = add_one_by_one_v1!(sum, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    // println!("{:?}", ret6);
+    // let ret7 = add_one_by_one_v2!(1,);
+    // add_one_by_one_v2!(1,2,3,4,5,6,7);
+    let ret7 = add_one_by_one_v2!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    // let ret7 = { 1 + (2 + (3 + (4 + (5 + (6 + (7)))))) };
+    println!("{:?}", ret7);
 }

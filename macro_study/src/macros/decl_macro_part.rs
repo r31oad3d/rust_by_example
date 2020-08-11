@@ -86,3 +86,27 @@ macro_rules! write_html {
         write_html!($w, $($rest)*);
     }};
 }
+
+macro_rules! add_one_by_one_v1 {
+    ($sum:ident, $($e:expr),*) => {{
+        let mut $sum = 0;
+        $($sum+=$e;)*
+        $sum
+    }};
+}
+
+// 1,2,3,4,5,6,7
+// =>
+// 1 + (2,3,4,5,6,7)
+// 1 + (2 + (3,4,5,6,7))
+// 1 + (2 + (3 + (4,5,6,7)))
+// 1 + (2 + (3 + (4 + (5,6,7))))
+// 1 + (2 + (3 + (4 + (5 + (6,7)))))
+// 1 + (2 + (3 + (4 + (5 + (6 + (7))))))
+
+macro_rules! add_one_by_one_v2 {
+    ($e:expr) => { $e };
+    ($e:expr, $($rest:tt),*) => {
+        $e + (add_one_by_one_v2!($($rest),*))
+    };
+}
