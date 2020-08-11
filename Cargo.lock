@@ -1380,8 +1380,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "macro_study"
 version = "0.1.0"
 dependencies = [
- "lazy_static 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "syn 1.0.38 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hello_macro 0.1.0",
+ "hello_macro_derive 0.1.0",
 ]
 
 [[package]]

@@ -6,8 +6,9 @@ members = [
     "from_to_example",
     "curry_function",
     "reflect_study",
-    "hello_macro",
-    "hello_macro_derive",
+    "macro_study",
+    "macro_study/hello_macro",
+    "macro_study/hello_macro_derive",
     "actix-study",
     "rust_data_structure",
     "rust_lib_study",
@@ -37,6 +38,6 @@ members = [
     "iter",
     "variables",
     "crate_misc",
-    "yew_study",
-    "macro_study"
+    "yew_study"
+
 ]

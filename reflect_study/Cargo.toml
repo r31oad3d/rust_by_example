@@ -9,7 +9,7 @@ edition = "2018"
 [dependencies]
 quote = "1.0.7"
 syn = "1.0.35"
-hello_macro = {path = "../hello_macro"}
-hello_macro_derive = {path = "../hello_macro_derive"}
+hello_macro = {path = "../macro_study/hello_macro" }
+hello_macro_derive = {path = "../macro_study/hello_macro_derive" }
 
 
