@@ -1,7 +1,7 @@
 use std::path::Path;
 
 fn main() {
-    let path = Path::new(".");
+    let path = Path::new("");
 
     let display = path.display();
 

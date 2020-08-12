@@ -5,7 +5,7 @@ use std::fs;
 use std::path::Path;
 
 fn main() {
-    let path = Path::new(".");
+    let path = Path::new("");
     println!("{:?}", path.canonicalize().unwrap());
     match fs::read("crate_misc/res/6027044.jpg") {
         Ok(img_buf) => {
