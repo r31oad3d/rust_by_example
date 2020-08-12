@@ -9,6 +9,7 @@ members = [
     "miscs/gussing_game",
     "miscs/minigrep",
     "miscs/hello_world",
+    "miscs/gussing_game",
 
     "crates/crate_misc",
     "crates/crate_yew_example",
@@ -40,6 +41,7 @@ members = [
     "study/study_iter",
     "study/study_variables",
     "study/study_trait_object",
+    "study/study_cross_compile",
 
     "rust_data_structure"
 
