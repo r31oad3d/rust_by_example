@@ -45,6 +45,6 @@ members = [
     "study/study_trait_object",
     "study/study_cross_compile",
 
-    "rust_data_structure"
-
+    "rust_data_structure",
+    "leetcode"
 ]

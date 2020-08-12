@@ -1,0 +1,12 @@
+[package]
+name = "rust_vue_template"
+version = "0.1.0"
+authors = ["Random Rustacean <random@rustacean.example>"]
+
+[dependencies]
+stdweb = "*"
+serde = "*"
+serde_derive = "*"
+
+[lib]
+crate-type = ["cdylib"]
