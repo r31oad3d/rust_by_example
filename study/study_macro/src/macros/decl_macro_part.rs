@@ -88,10 +88,10 @@ macro_rules! write_html {
 }
 
 macro_rules! add_one_by_one_v1 {
-    ($sum:ident, $($e:expr),*) => {{
-        let mut $sum = 0;
-        $($sum+=$e;)*
-        $sum
+    ($($e:expr),*) => {{
+        let mut sum = 0;
+        $(sum+=$e;)*
+        sum
     }};
 }
 

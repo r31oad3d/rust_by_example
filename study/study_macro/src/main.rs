@@ -75,8 +75,8 @@ fn main() {
     //    );
 
     //let mut sum = 0;
-    let ret6 = add_one_by_one_v1!(sum, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    // println!("{:?}", ret6);
+    let ret6 = add_one_by_one_v1!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    println!("{:?}", ret6);
     // let ret7 = add_one_by_one_v2!(1,);
     // add_one_by_one_v2!(1,2,3,4,5,6,7);
     let ret7 = add_one_by_one_v2!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);

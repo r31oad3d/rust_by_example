@@ -1,5 +1,5 @@
 #![feature(proc_macro)]
-#![recursion_limit="500"]
+#![recursion_limit = "500"]
 
 #[macro_use]
 extern crate stdweb;
@@ -15,7 +15,7 @@ pub fn register(model: VueModel) {
 
 #[js_export]
 pub fn on_press(model: VueModel, event: stdweb::Value) {
-    let mut new_msg : String = model.get("msg");
+    let mut new_msg: String = model.get("msg");
     new_msg.push('!');
     model.set("msg", &new_msg);
 }
