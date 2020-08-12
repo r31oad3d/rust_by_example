@@ -1,9 +1,17 @@
 #![recursion_limit = "20"]
 
+#![allow(unused_variables)]
+#![allow(unused_must_use)]
+#![allow(clippy::single_component_path_imports)]
+
+
+
 #[macro_use]
 mod macros;
 
 use std::collections::HashMap;
+use hello_macro::HelloMacro;
+use hello_macro_derive::HelloMacro;
 
 fn main() {
     let ret = my_map!(
@@ -82,4 +90,15 @@ fn main() {
     let ret7 = add_one_by_one_v2!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     // let ret7 = { 1 + (2 + (3 + (4 + (5 + (6 + (7)))))) };
     println!("{:?}", ret7);
+
+    #[derive(HelloMacro)]
+    struct A;
+    A::hello_macro();
+
+    let ret8 = add_one_by_one_v3!();
+    println!("{:?}", ret8);
+
+    let ret9: HashMap<&str, i32> = my_map_v2!("a" => "1",);
+    let ret9: HashMap<&str, i32> = my_map_v3!();
+    let ret10: HashMap<&str, i32> = my_map!();
 }

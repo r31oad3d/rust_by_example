@@ -2659,6 +2659,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "study_closure"
+version = "0.1.0"
+
+[[package]]
 name = "study_cross_compile"
 version = "0.1.0"
 

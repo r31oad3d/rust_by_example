@@ -7,6 +7,27 @@ macro_rules! my_map {
         }
     };
 }
+
+macro_rules! my_map_v2 {
+    ($($key:expr => $value:expr),+) => {
+        {
+            let mut m = HashMap::new();
+            $(m.insert($key,$value);)*
+            m
+        }
+    };
+}
+
+macro_rules! my_map_v3 {
+    ($($key:expr => $value:expr),?) => {
+        {
+            let mut m = HashMap::new();
+            $(m.insert($key,$value);)*
+            m
+        }
+    };
+}
+
 macro_rules! one {
     () => {
         1
@@ -108,5 +129,13 @@ macro_rules! add_one_by_one_v2 {
     ($e:expr) => { $e };
     ($e:expr, $($rest:tt),*) => {
         $e + (add_one_by_one_v2!($($rest),*))
+    };
+}
+
+macro_rules! add_one_by_one_v3 {
+    () => { 0 };
+    ($e:expr) => { $e };
+    ($e:expr, $($rest:tt),+) => {
+        $e + (add_one_by_one_v2!($($rest),+))
     };
 }

@@ -53,4 +53,12 @@ fn main() {
     let array1: [i32; 5] = [1, 2, 3, 4, 5];
 
     println!("{}", months[1]);
+
+    let flag = false;
+    let ret = match flag {
+        true => {1},
+        false => panic!("XXX"),
+    };
+
+    println!("{:?}", ret);
 }
