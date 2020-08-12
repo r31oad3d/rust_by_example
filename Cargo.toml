@@ -10,6 +10,8 @@ members = [
     "miscs/minigrep",
     "miscs/hello_world",
     "miscs/gussing_game",
+    "miscs/rust-graphql-juniper-actix-diesel-postgres",
+    "miscs/rust_vue_template",
 
     "crates/crate_misc",
     "crates/crate_yew_example",
