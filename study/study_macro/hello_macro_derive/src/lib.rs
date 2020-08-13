@@ -5,7 +5,7 @@ use syn::DeriveInput;
 #[proc_macro_derive(HelloMacro)]
 pub fn hello_macro_derive(input: TokenStream) -> TokenStream {
     let ast: DeriveInput = syn::parse(input).unwrap();
-    println!("{}", stringify!(ast));
+    //println!("{}", stringify!(ast));
     impl_hello_macro(&ast)
 }
 

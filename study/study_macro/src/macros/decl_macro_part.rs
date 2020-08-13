@@ -19,7 +19,7 @@ macro_rules! my_map_v2 {
 }
 
 macro_rules! my_map_v3 {
-    ($($key:expr => $value:expr),?) => {
+    ($($key:expr => $value:expr)?) => {
         {
             let mut m = HashMap::new();
             $(m.insert($key,$value);)*

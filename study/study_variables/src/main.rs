@@ -56,7 +56,7 @@ fn main() {
 
     let flag = false;
     let ret = match flag {
-        true => {1},
+        true => 1,
         false => panic!("XXX"),
     };
 
