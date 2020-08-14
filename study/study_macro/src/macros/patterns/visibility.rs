@@ -37,4 +37,8 @@ macro_rules! newtype {
 //     };
 // }
 
-macro_rules! as_item { ($i:item) => {$i} }
+macro_rules! as_item {
+    ($i:item) => {
+        $i
+    };
+}

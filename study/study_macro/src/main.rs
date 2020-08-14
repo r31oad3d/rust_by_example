@@ -4,7 +4,7 @@
 #![allow(clippy::single_component_path_imports)]
 #![allow(unused_macros)]
 #![allow(unused_mut)]
-
+#![allow(dead_code)]
 #[macro_use]
 mod macros;
 
@@ -86,9 +86,12 @@ fn main() {
     // let ret7 = add_one_by_one_v2!(1,);
     // add_one_by_one_v2!(1,2,3,4,5,6,7);
     let ret7 = add_one_by_one_v2!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    let ret7_1 = add_one_by_one_v2_1!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10,);
+    let ret7_2 = add_one_by_one_v2_2!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    let ret7_3 = add_one_by_one_v2_3!(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     // let ret7 = { 1 + (2 + (3 + (4 + (5 + (6 + (7)))))) };
     println!("{:?}", ret7);
-
+    println!("{:?}", ret7_1);
     #[derive(HelloMacro)]
     struct A;
     A::hello_macro();
@@ -118,24 +121,33 @@ fn main() {
     println!(concat!(stringify!(a), " = {:?}"), a);
 
     assert_eq!(foo!(42), 42);
+    // foo!(42 43);
 
     //foo!(1);
     let strings: [String; 3] = init_array![String::from("hi!"); 3];
     // let strings: [String; 3] = init_array_another_wat![String::from("hi!"); 3];
     assert_eq!(tuple_default!(i32, bool, String), (0, false, String::new()));
-    let tup1:(i32, bool, String) = tuple_default!(i32, bool, String);
-    let tup2:(i32, bool, String) = tuple_default_v2!(i32, bool, String);
+    let tup1: (i32, bool, String) = tuple_default!(i32, bool, String);
+    let tup2: (i32, bool, String) = tuple_default_v2!(i32, bool, String);
 
     //let tup2: (i32, bool, String) = (<i32>::default(), <bool>::default(), <String>::default());
     //let tup2: (i32, bool, String) = (<i32>::default(), <bool>::default(), <String>::default());
     // println!("{:?}",<i32>::default());
 
-    println!(struct_name!(pub struct Jim;));
-    println!(struct_name!(struct Jim;));
+    println!(struct_name!(
+        pub struct Jim;
+    ));
+    println!(struct_name!(
+        struct Jim;
+    ));
     println!(struct_name!(pub pub pub struct Jim;));
 
-    println!(struct_name_v2!(pub struct Jim;));
-    println!(struct_name_v2!(struct Jim;));
+    println!(struct_name_v2!(
+        pub struct Jim;
+    ));
+    println!(struct_name_v2!(
+        struct Jim;
+    ));
     //println!(struct_name_v2!(pub pub struct Jim;));
 
     #[derive(Debug, Eq, PartialEq)]
@@ -148,4 +160,22 @@ fn main() {
     // newtype_v2! { struct Dummy(i32); };
 
     // assert_eq!(Dummy::new(42), Dummy(42));
+    let equals_zero =
+        abacus!((++-+-+++--++---++----+-+----------++++++++++-+-+-+) -> ());
+    let equals_zero_v2 = abacus_v2!(++-+-++++-----+-++-);
+    println!("{:?}", equals_zero_v2);
+    //assert_eq!(equals_zero, true);
+    const COUNT: u32 = count_idents!(A, B, C);
+    println!("{:?}", COUNT);
+
+    as_item! {struct Dummy1;}
+    as_stmt!(let as_pat!(_) = as_expr!(42));
+    count_tts!(0 1 2);
+    count_tts_v4!(0 1 2);
+
+    let ret11 = parse_unitary_variants!(
+         enum Dummy { A=1, B=3, C=5 }
+         => stringify(variants:)
+    );
+    println!("{:?}", ret11);
 }

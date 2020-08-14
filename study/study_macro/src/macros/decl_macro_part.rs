@@ -131,7 +131,25 @@ macro_rules! add_one_by_one_v2 {
         $e + (add_one_by_one_v2!($($rest),*))
     };
 }
+macro_rules! add_one_by_one_v2_1 {
+    ($e:expr,) => { $e };
+    ($e:expr, $($rest:tt,)*) => {
+        $e + (add_one_by_one_v2_1!($($rest,)*))
+    };
+}
 
+macro_rules! add_one_by_one_v2_2 {
+    ($e:expr,) => { $e };
+    ($e:expr, $($rest:tt),* $(,)*) => {
+        $e + (add_one_by_one_v2_2!($($rest,)*))
+    };
+}
+macro_rules! add_one_by_one_v2_3 {
+    ($e:expr) => { $e };
+    ($e:expr, $($rest:tt),*) => {
+        $e + add_one_by_one_v2_3!($($rest),*)
+    };
+}
 macro_rules! add_one_by_one_v3 {
     () => { 0 };
     ($e:expr) => { $e };
