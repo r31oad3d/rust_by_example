@@ -30,7 +30,7 @@ macro_rules! parse_unitary_variants {
             ($($tail)*) -> ($($var_names)*)
         }
     };
-    // Handle a variant, optionally with an with initialiser.
+    // Handle a variant, optionally with an with initializer.
     (
         @collect_unitary_variants $fixed:tt,
         ($var:ident $(= $_val:expr)*, $($tail:tt)*) -> ($($var_names:tt)*)

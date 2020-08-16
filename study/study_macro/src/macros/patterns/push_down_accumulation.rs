@@ -6,7 +6,7 @@ macro_rules! init_array {
     (@accum (2, $e:expr) -> ($($body:tt)*))
         => { init_array!(@accum (1, $e) -> ($($body)* $e,)) };
     (@accum (3, $e:expr) -> ($($body:tt)*))
-        => {init_array!(@accum (2, $e) -> ($($body)* $e,))};
+        => { init_array!(@accum (2, $e) -> ($($body)* $e,)) };
     (@as_expr $e:expr) => {$e};
     [$e:expr; $n:tt] => {
         {

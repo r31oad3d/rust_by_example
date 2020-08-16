@@ -16,10 +16,10 @@ mod a1 {
     }
 
     mod b1 {
-        pub(in a1) use self::c1::semisecret;
+        pub(in crate::a1) use self::c1::semisecret;
         mod c1 {
             const J: i32 = 4;
-            pub(in a1) fn semisecret(x: i32) -> i32 {
+            pub(in crate::a1) fn semisecret(x: i32) -> i32 {
                 x + J
             }
         }
