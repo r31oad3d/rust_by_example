@@ -14,13 +14,17 @@ members = [
     "miscs/rust_vue_template",
 
     "crates/crate_misc",
-    "crates/crate_yew_example",
     "crates/crate_actix_study",
     "crates/crate_gtk_example",
     "crates/crate_qt_example",
     "crates/crate_orbtk_example",
     "crates/crate_tokio_example",
     "crates/crate_shaku_example",
+
+    "crates/yew/crate_yew_example",
+    "crates/yew/pub_sub",
+
+    "crates/ndarray/ndarray_example",
 
     "study/study_enums",
     "study/study_from_to",
@@ -45,6 +49,7 @@ members = [
     "study/study_trait_object",
     "study/study_cross_compile",
     "study/study_closure",
+    "study/study_feature",
 
     "rust_data_structure",
     "leetcode"
