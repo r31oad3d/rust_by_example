@@ -821,6 +821,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "diesel_example_1"
+version = "0.1.0"
+dependencies = [
+ "diesel 1.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dotenv 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "dirs"
 version = "2.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"

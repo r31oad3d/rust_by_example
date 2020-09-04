@@ -24,6 +24,8 @@ members = [
     "crates/yew/crate_yew_example",
     "crates/yew/pub_sub",
 
+    "crates/diesel/diesel_example_1",
+
     "crates/ndarray/ndarray_example",
 
     "study/study_enums",
