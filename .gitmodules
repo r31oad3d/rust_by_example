@@ -7,3 +7,6 @@
 [submodule "design_pattern"]
 	path = design_pattern
 	url = git@gitee.com:r31oad3d/design_pattern.git
+[submodule "data_structure"]
+	path = data_structure
+	url = git@gitee.com:r31oad3d/data_structure.git
