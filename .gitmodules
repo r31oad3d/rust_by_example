@@ -1,3 +1,9 @@
 [submodule "leetcode"]
 	path = leetcode
 	url = git@gitee.com:r31oad3d/leetcode.git
+[submodule "algorithms"]
+	path = algorithms
+	url = git@gitee.com:r31oad3d/algorithms.git
+[submodule "design_pattern"]
+	path = design_pattern
+	url = git@gitee.com:r31oad3d/design_pattern.git
