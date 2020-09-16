@@ -11,7 +11,7 @@ log = "0.4.11"
 log4rs = "0.13.0"
 futures = { version = "0.3.5", features = ["compat"] }
 hyper = "0.13.7"
-
+tokio = { version = "0.2.22", features = ["full"] }
 
 [[bin]]
 name = "test1"

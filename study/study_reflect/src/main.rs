@@ -4,6 +4,12 @@ use std::any::{Any, TypeId};
 #[derive(HelloMacro)]
 struct Pancake;
 
+#[derive(Default, Debug)]
+struct A<'a> {
+    a: i32,
+    b: &'a str,
+}
+
 fn main() {
     let v1 = "hello";
     let mut a: &Any;
@@ -19,6 +25,22 @@ fn main() {
     print_any(&v2);
 
     Pancake::hello_macro();
+
+    let mut a = A::default();
+    a.a = 16;
+    a.b = "aaaaa";
+    let a_a1 = &(a.a);
+    let a_b1 = &(a.b);
+    let a_a2 = &a.a;
+    let a_b2 = &a.b;
+    let a_a3 = &(a).a;
+    let a_b3 = &(a).b;
+    println!("{:?}", a_a1);
+    println!("{:?}", a_a2);
+    println!("{:?}", a_a3);
+    println!("{:?}", a_b1);
+    println!("{:?}", a_b2);
+    println!("{:?}", a_b3);
 }
 
 fn print_any(any: &Any) {

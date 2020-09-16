@@ -1,4 +1,4 @@
-#![recursion_limit="456"]
+#![recursion_limit = "456"]
 #![allow(clippy::slow_vector_initialization)]
 #[path = "../macros/pikachu_macro.rs"]
 #[macro_use]
@@ -185,5 +185,3 @@ fn main() {
 
     );
 }
-
-

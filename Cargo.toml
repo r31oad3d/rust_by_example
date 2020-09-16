@@ -28,7 +28,11 @@ members = [
 
     "crates/ndarray/ndarray_example",
 
+    "study/study_async",
+    "study/study_closure",
+
     "study/study_enums",
+    "study/study_error_handle",
     "study/study_from_to",
     "study/study_reflect",
     "study/study_macro",
@@ -38,21 +42,27 @@ members = [
     "study/study_lib/rust-lib-test-1",
     "study/study_lib/rust-lib-test-2",
     "study/study_lib/rust-lib-test-3",
-    "study/study_async",
-    "study/study_error_handle",
     "study/study_smart_pointer",
     "study/study_lifecycle",
     "study/study_std/io-fs-example",
-    "study/study_std/async-study",
+    "study/study_std/async",
+    "study/study_std/thread",
     "study/study_std/test-example",
     "study/study_std/misc",
     "study/study_iter",
     "study/study_variables",
+
     "study/study_trait_object",
     "study/study_cross_compile",
-    "study/study_closure",
+
     "study/study_feature",
 
+    "study/study_ffi/ffi_opencv",
+
+
+
     "rust_data_structure",
-    "leetcode"
+    "leetcode",
+    "algorithms",
+    "design_pattern"
 ]

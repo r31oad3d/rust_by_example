@@ -28,7 +28,8 @@ impl Component for Model {
         let callback = |_| {
             println!("Example of a standalone callback.");
         };
-        let handle = IntervalService::spawn(Duration::from_secs(10), callback.into());
+        let handle =
+            IntervalService::spawn(Duration::from_secs(10), callback.into());
 
         Model {
             link: link.clone(),
@@ -44,8 +45,10 @@ impl Component for Model {
         match msg {
             Msg::StartTimeout => {
                 {
-                    let handle =
-                        TimeoutService::spawn(Duration::from_secs(3), self.callback_done.clone());
+                    let handle = TimeoutService::spawn(
+                        Duration::from_secs(3),
+                        self.callback_done.clone(),
+                    );
                     self.job = Some(Box::new(handle));
                 }
                 self.messages.clear();
@@ -55,8 +58,10 @@ impl Component for Model {
             }
             Msg::StartInterval => {
                 {
-                    let handle =
-                        IntervalService::spawn(Duration::from_secs(1), self.callback_tick.clone());
+                    let handle = IntervalService::spawn(
+                        Duration::from_secs(1),
+                        self.callback_tick.clone(),
+                    );
                     self.job = Some(Box::new(handle));
                 }
                 self.messages.clear();

@@ -3,8 +3,11 @@ extern crate diesel;
 extern crate dotenv;
 
 use self::models::{NewPost, Post};
-use diesel::pg::PgConnection;
-use diesel::prelude::*;
+use diesel::{
+    debug_query,
+    pg::{Pg, PgConnection},
+    prelude::*,
+};
 use dotenv::dotenv;
 use std::env;
 pub mod models;
@@ -28,8 +31,7 @@ pub fn create_post<'a>(
     use schema::posts;
     let new_post = NewPost { title, body };
 
-    diesel::insert_into(posts::table)
-        .values(&new_post)
-        .get_result(conn)
-        .expect("Error saving new post")
+    let insert = diesel::insert_into(posts::table).values(&new_post);
+    println!("{}", debug_query::<Pg, _>(&insert));
+    insert.get_result(conn).expect("Error saving new post")
 }
