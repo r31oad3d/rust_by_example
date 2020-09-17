@@ -60,9 +60,11 @@ members = [
     "study/study_ffi/ffi_opencv",
 
 
-
-    "rust_data_structure",
-    "leetcode",
     "algorithms",
-    "design_pattern"
+    "data_structure",
+
+    "design_pattern",
+    "leetcode",
+
+
 ]

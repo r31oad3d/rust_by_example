@@ -909,6 +909,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "data_structure"
+version = "0.1.0"
+
+[[package]]
 name = "dces"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2777,10 +2781,6 @@ dependencies = [
  "error-chain 0.12.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "libloading 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
-
-[[package]]
-name = "rust_data_structure"
-version = "0.1.0"
 
 [[package]]
 name = "rust_vue_template"
