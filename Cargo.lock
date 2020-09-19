@@ -949,6 +949,7 @@ dependencies = [
 name = "design_pattern"
 version = "0.1.0"
 dependencies = [
+ "dyn-clone 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1032,6 +1033,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "dunce"
 version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "dyn-clone"
+version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -4013,6 +4019,7 @@ dependencies = [
 "checksum downcast-rs 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
 "checksum dtoa 0.4.6 (registry+https://github.com/rust-lang/crates.io-index)" = "134951f4028bdadb9b84baf4232681efbf277da25144b9b0ad65df75946c422b"
 "checksum dunce 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b2641c4a7c0c4101df53ea572bffdc561c146f6c2eb09e4df02bc4811e3feeb4"
+"checksum dyn-clone 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "4c53dc3a653e0f64081026e4bf048d48fec9fce90c66e8326ca7292df0ff2d82"
 "checksum either 1.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "cd56b59865bce947ac5958779cfa508f6c3b9497cc762b7e24a12d11ccde2c4f"
 "checksum encoding_rs 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)" = "e8ac63f94732332f44fe654443c46f6375d1939684c17b0afb6cb56b0456e171"
 "checksum enum-as-inner 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "7c5f0096a91d210159eceb2ff5e1c4da18388a170e1e3ce948aac9c8fdbbf595"
