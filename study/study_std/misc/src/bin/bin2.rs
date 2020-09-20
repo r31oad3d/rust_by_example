@@ -21,6 +21,7 @@ fn main() {
     println!("ret1:{:?}", ret1);
 
     for elt in itertools::merge(&[1, 2, 3], &[2, 3, 4]) {
+        println!("!!!!!!!!!!!!!!!!");
         println!("{:?}", elt);
     }
     let mut merge1 = itertools::merge(&[1, 2, 3], &[2, 3, 4]);
