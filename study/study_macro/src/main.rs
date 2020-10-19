@@ -7,12 +7,57 @@
 #![allow(dead_code)]
 #[macro_use]
 mod macros;
-
+#[macro_use]
+mod macros1;
 use hello_macro::HelloMacro;
 use hello_macro_derive::HelloMacro;
 use std::collections::HashMap;
 
+fn macro1_main() {
+    struct Dummy(i32);
+
+    impl Dummy {
+        double_method! {
+        self,
+        {
+            self.0 *= 2;
+            self
+        }
+    }
+    }
+    //let color = vec![RED,GREEN, BLUE];
+    let a = 3 * four!();
+    let b = multiply_add!(1, 2, 3);
+    println!("a={}", a);
+    println!("b={}", b);
+    let v = vec_strs![1 + 1, 2 + 2];
+    assert_eq!(&*v, &["2", "4"]);
+    println!("{:?}", stringify!(dummy(2 * (1 + (3)))));
+    println!("{:?}", capture_expr_then_stringify!(dummy(2 * (1 + (3)))));
+
+    println!(
+        "{}\n{}\n{}\n",
+        match_tokens!((caravan)),
+        match_tokens!(3 + 6),
+        match_tokens!(5)
+    );
+    println!(
+        "{}\n{}\n{}",
+        capture_then_match_tokens!((caravan)),
+        capture_then_match_tokens!(3 + 6),
+        capture_then_match_tokens!(5)
+    );
+
+    //let four = using_a1!(a1/10);
+
+    println!("{}", what_is!(self));
+    println!("{}", call_with_ident!(what_is(self)));
+}
+
 fn main() {
+
+
+
     let ret = my_map!(
         "a" => "1",
         "b" => "2",
