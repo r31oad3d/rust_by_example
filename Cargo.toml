@@ -66,5 +66,6 @@ members = [
     "design_pattern",
     "leetcode",
 
+    "utils_rust"
 
 ]
