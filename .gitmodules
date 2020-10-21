@@ -10,3 +10,6 @@
 [submodule "data_structure"]
 	path = data_structure
 	url = git@gitee.com:r31oad3d/data_structure.git
+[submodule "utils_rust"]
+	path = utils_rust
+	url = git@gitee.com:r31oad3d/utils_rust.git
