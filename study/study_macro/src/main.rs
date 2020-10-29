@@ -18,12 +18,12 @@ fn macro1_main() {
 
     impl Dummy {
         double_method! {
-        self,
-        {
-            self.0 *= 2;
-            self
+            self,
+            {
+                self.0 *= 2;
+                self
+            }
         }
-    }
     }
     //let color = vec![RED,GREEN, BLUE];
     let a = 3 * four!();
@@ -55,9 +55,6 @@ fn macro1_main() {
 }
 
 fn main() {
-
-
-
     let ret = my_map!(
         "a" => "1",
         "b" => "2",
