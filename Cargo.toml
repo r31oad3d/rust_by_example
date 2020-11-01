@@ -58,7 +58,7 @@ members = [
     "study/study_feature",
 
     "study/study_ffi/ffi_opencv",
-
+    "study/study_ffi/libgiit2",
 
     "algorithms",
     "data_structure",
