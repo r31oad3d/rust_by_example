@@ -8,6 +8,7 @@ members = [
     "miscs/curry_function",
     "miscs/gussing_game",
     "miscs/minigrep",
+    "miscs/mandelbrot",
     "miscs/hello_world",
     "miscs/gussing_game",
     "miscs/rust-graphql-juniper-actix-diesel-postgres",
