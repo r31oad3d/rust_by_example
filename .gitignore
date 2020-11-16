@@ -1,6 +1,7 @@
 /target
 **/*.rs.bk
 /.idea
+**/.idea
 ### Linux template
 *~
 
@@ -195,3 +196,4 @@ DerivedData/
 ## Gcc Patch
 /*.gcno
 
+/.devcontainer
